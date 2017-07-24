@@ -630,14 +630,6 @@ class IncidentResponse
         snap_array = incident_response.snapshot(instance_id)
         incident_response.forensics_analysis(snap_array)
         incident_response.store_metadata(instance_id)
-        print "Enter security group ID: "
-        secgroup_id = gets.chomp()
-        print "Add or remove the security group? (add/remove): "
-        action = gets.chomp()
-        incident_response.add_remove_security_group(instance_id, secgroup_id, action)
-        print "Enter the CIDR to block in the Access Control List: "
-        cidr = gets.chomp()
-        incident_response.block_ip(instance_id, cidr)
 
         puts ""
         puts "Press Return to return to the main menu"
